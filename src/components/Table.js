@@ -1,4 +1,5 @@
 import satData from "./satData";
+import "./styling.css";
 
 const Table = ({ sat }) => {
   return (
@@ -11,15 +12,14 @@ const Table = ({ sat }) => {
           <th>Status</th>
         </tr>
       </thead>
-
       <tbody> {/*renders the data based on button clicked*/}
         {sat.map(sat => (
-          <tr key={sat.id}>
-            <td>{sat.name}</td>
-            <td>{sat.type}</td>
-            <td>{sat.launchDate}</td>
-            <td>
-              {sat.operational ? 'Active' : 'InActive'}
+        <tr key={sat.id}>
+        <td>{sat.name}</td>
+        <td>{sat.type}</td>
+        <td>{sat.launchDate}</td>
+        <td>
+            {sat.operational ? 'Active' : 'InActive'}
             </td>
           </tr>
         ))}
