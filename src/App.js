@@ -1,15 +1,15 @@
 import Buttons from "./components/Buttons";
 import Table from "./components/Table";
 import Banner from "./components/Banner";
-import useState from "react";
+import {useState} from "react";
 import satData from "./components/satData";
 
 function App() {
-  const [sat, setSat] = useState(satData); //variable to manage the state of project
+ const [sat, setSat] = useState(satData); //variable to manage the state of project
 
-  let displaySats = [...new Set(satData.map((data) => data.orbitType))]; // variable to hold the unique values of the orbitType property of the satellite objects
+  const displaySats = [...new Set(satData.map((data) => data.orbitType))]; // variable to hold the unique values of the orbitType property of the satellite objects
 
-  let filterByType = (currentType) => { //function that filters through the satellites
+  const filterByType = (currentType) => { //function that filters through the satellites
     const displaySats = satData.filter((newSatDisplay) => {
        return newSatDisplay.orbitType === currentType;
     });
